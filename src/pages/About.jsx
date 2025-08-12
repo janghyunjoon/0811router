@@ -1,4 +1,5 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
 
 const About = () => {
    const infoList = [
@@ -9,9 +10,20 @@ const About = () => {
     { id: 5, label: "연락처", desc: "contact@example.com" },
     { id: 6, label: "대표자", desc: "홍길동" } // 새 데이터 추가
   ];
-  return (
-    <div>About</div>
-  )
-}
+ return (
+    <section>
+      <h1>About 페이지</h1>
+      <ul className="list">
+        {infoList.map((i) => (
+          <li key={i.id}>
+            <NavLink to={`/about/${i.id}`}>
+              {i.id} - {i.desc}
+            </NavLink>
+          </li>
+        ))}
+      </ul>
+    </section>
+  );
+};
 
 export default About
