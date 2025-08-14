@@ -13,6 +13,7 @@ const About = () => {
  return (
     <section>
       <h1>About 페이지</h1>
+
       <ul className="list">
         {infoList.map((i) => (
           <li key={i.id}>
